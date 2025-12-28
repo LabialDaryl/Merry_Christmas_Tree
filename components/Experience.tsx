@@ -76,10 +76,10 @@ export const Experience: React.FC<ExperienceProps> = ({ mode, handPosition, uplo
       <OrbitControls 
         ref={controlsRef}
         enablePan={false} 
-        minPolarAngle={Math.PI / 4} 
+        minPolarAngle={Math.PI / 6} 
         maxPolarAngle={Math.PI / 1.8}
-        minDistance={10}
-        maxDistance={30}
+        minDistance={15}
+        maxDistance={40}
         enableDamping
         dampingFactor={0.05}
         enabled={true}
@@ -88,18 +88,20 @@ export const Experience: React.FC<ExperienceProps> = ({ mode, handPosition, uplo
       {/* Lighting Setup for Maximum Luxury */}
       <Environment preset="lobby" background={false} blur={0.8} />
       
-      <ambientLight intensity={0.2} color="#004422" />
+      <ambientLight intensity={0.25} color="#004422" />
       <spotLight 
-        position={[10, 20, 10]} 
-        angle={0.2} 
+        position={[15, 25, 15]} 
+        angle={0.25} 
         penumbra={1} 
-        intensity={2} 
+        intensity={2.5} 
         color="#fff5cc" 
         castShadow 
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
       />
-      <pointLight position={[-10, 5, -10]} intensity={1} color="#D4AF37" />
+      <pointLight position={[-15, 8, -15]} intensity={1.2} color="#D4AF37" />
 
-      <group position={[0, -5, 0]}>
+      <group position={[0, -3, 0]}>
         <Foliage mode={mode} count={12000} />
         <Ornaments mode={mode} count={600} />
         <Polaroids mode={mode} uploadedPhotos={uploadedPhotos} twoHandsDetected={twoHandsDetected} onClosestPhotoChange={onClosestPhotoChange} />
@@ -107,10 +109,10 @@ export const Experience: React.FC<ExperienceProps> = ({ mode, handPosition, uplo
         
         {/* Floor Reflections */}
         <ContactShadows 
-          opacity={0.7} 
-          scale={30} 
-          blur={2} 
-          far={4.5} 
+          opacity={0.5} 
+          scale={40} 
+          blur={3} 
+          far={6} 
           color="#000000" 
         />
       </group>

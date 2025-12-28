@@ -122,7 +122,7 @@ export default function App() {
       <ErrorBoundary>
         <Canvas
           dpr={[1, 2]}
-          camera={{ position: [0, 4, 20], fov: 45 }}
+          camera={{ position: [0, 6, 25], fov: 28, zoom: 1.2 }}
           gl={{ antialias: false, stencil: false, alpha: false }}
           shadows
         >
